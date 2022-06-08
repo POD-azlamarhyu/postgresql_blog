@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  db:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: blog_sql
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: pracadmin
+      POSTGRES_PASSWORD: pracadminpw
+      POSTGRES_DB: pracdb
+    volumes:
+      - ./blogpgdata:/var/lib/postgresql/data
+volumes:
+  blogpgdata: {}
+    
