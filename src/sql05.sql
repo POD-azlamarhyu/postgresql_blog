@@ -1,5 +1,5 @@
 create table if not exists user_info(
-    user_id SERIAL PRIMARY KEY not null,
+    user_id UUID PRIMARY KEY NOT NULL DEFAULT gen_random_uuid(),
     email VARCHAR(225) not null UNIQUE,
     password VARCHAR(1000) not null CHECK(length(password)>8),
     is_admin BOOLEAN DEFAULT false,
@@ -47,10 +47,11 @@ create table if not exists anime_info(
 
 CREATE TABLE IF NOT EXISTS individual_stock_info(
     stock_id SERIAL PRIMARY KEY NOT NULL,
+    market_id INTEGER NOT NULL,
     ticker_simbol VARCHAR(10) NOT NULL,
-    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    current_value INTEGER,
     listed_date DATE,
-    delete_flag SMALLINT
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS company_info(
@@ -68,7 +69,7 @@ CREATE TABLE IF NOT EXISTS company_info(
 CREATE TABLE IF NOT EXISTS company_reference_info(
     reference_id SERIAL  PRIMARY KEY NOT NULL,
     stock_id INTEGER NOT NULL,
-    market_value PRECISION NOT NULL,
+    market_value REAL NOT NULL,
     dividend_yield REAL NOT NULL,
     per REAL NOT NULL,
     pbr REAL NOT NULL,
@@ -78,8 +79,29 @@ CREATE TABLE IF NOT EXISTS company_reference_info(
 
 CREATE TABLE IF NOT EXISTS market_info(
     market_id SERIAL PRIMARY KEY NOT NULL,
-    stock_id INTEGER NOT NULL,
     market_name VARCHAR(100) NOT NULL,
+    contry_name VARCHAR(50) NOT NULL,
+    currency VARCHAR(15) NOT NULL,
+    establish_date DATE,
+    listed_company_number INTEGER,
+    location VARCHAR(100),
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS stock_market_index_info(
+    index_id SERIAL PRIMARY KEY NOT NULL,
+    market_id INTEGER NOT NULL,
+    index_name VARCHAR(50) NOT NULL,
+    constituent_stocks INTEGER,
+    index_point REAL,
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS individual_stock_info_history(
+    stock_history_id SERIAL PRIMARY KEY NOT NULL,
+    stock_id INTEGER NOT NULL,
+    ticker_simbol VARCHAR(10) NOT NULL,
+    current_value INTEGER,
     created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
