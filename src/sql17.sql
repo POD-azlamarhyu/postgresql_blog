@@ -8,3 +8,4 @@ select stock_id as kabushiki_id,market_id as shijou_id,ticker_simbol,listed_date
 
 
 select stock_id as "株式ID",market_id as "市場ID",ticker_simbol as "ティッカー名",listed_date as "上場日" from individual_stock_info as isi where listed_date between '2000-01-01' and '2022-06-11';
+

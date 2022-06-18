@@ -19,3 +19,4 @@ select * from individual_stock_info as isi right outer join company_info as  ci 
 select * from individual_stock_info_history as isih left join individual_stock_info as isi on isih.stock_id = isi.stock_id and isih.current_value = isi.current_value;
 
 select * from individual_stock_info_history as isih right join individual_stock_info as isi on isih.stock_id = isi.stock_id and isih.current_value = isi.current_value;
+

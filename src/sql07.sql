@@ -15,3 +15,4 @@ insert into individual_stock_info_history(stock_id,ticker_simbol,current_value) 
 insert into company_info(stock_id,company_name,company_name_english,post_code,headquarters_location,established_date,industry_type,company_industry) values (1,'アマゾン・コムドット','amazon com.',1111111,'アメリカ　サンフランシスコ','2000-01-01','情報・通信','ECサイト運営、クラウドサービス'),(2,'サステナビリティ・アソシエイト・サービス','sas Inc.',1444111,'アメリカ　シアトル','2000-01-01','情報・通信',''),(4,'セイコーマート','seicomart',1111111,'大日本帝国　副都札幌','2000-01-01','小売','コンビニエンスストア運営'),(10,'ソナイー','SONAY',1670033,'大日本帝国　帝都東京','2000-01-01','','ECサイト運営、クラウドサービス');
 
 insert into company_info(stock_id,company_name,company_name_english,post_code,headquarters_location,established_date,industry_type,company_industry) values (1,'三菱UFJB','mitsubishi ufjb',1111333,'大日本帝国','2000-01-01',null,null);
+

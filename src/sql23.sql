@@ -26,6 +26,7 @@ select * from individual_stock_info as isi where isi.current_value in (
      select subisi.current_value from individual_stock_info_history as subisi where subisi.current_value < 1000
 );
 
+
 select * from individual_stock_info as isi where isi.current_value > any (
      select subisi.current_value from individual_stock_info_history as subisi where subisi.current_value > 350 and subisi.current_value < 1000
 );

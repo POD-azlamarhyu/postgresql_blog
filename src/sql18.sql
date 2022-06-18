@@ -9,3 +9,4 @@ select * from character_name_info order by asc market_id;
 select * from market_info order by desc listed_company_number;
 
 select * from individual_stock_info order by asc current_value;
+

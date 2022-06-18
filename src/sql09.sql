@@ -19,6 +19,8 @@ update individual_stock_info_history set current_value = individual_stock_info.c
 update individual_stock_info_history set current_value = individual_stock_info.current_value from individual_stock_info where individual_stock_info.stock_id = individual_stock_info_history.stock_id and individual_stock_info.stock_id >= 9;
 
 
+
+
 --  anime_id |      anime_name      | onair  | cool_term 
 -- ----------+----------------------+--------+-----------
 --         1 | SPY FAMILY           | 2022年 |         1

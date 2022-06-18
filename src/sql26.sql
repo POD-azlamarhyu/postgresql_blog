@@ -20,3 +20,5 @@ select isi.ticker_simbol,round(isi.current_value,100) from individual_stock_info
 select isi.ticker_simbol,trunc(isi.current_value * 1.12) from individual_stock_info as isi;
 
 select isi.ticker_simbol,trunc(isi.current_value * random()) from individual_stock_info as isi;
+
+

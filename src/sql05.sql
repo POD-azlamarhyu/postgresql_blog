@@ -122,3 +122,4 @@ ALTER TABLE company_info ADD CONSTRAINT oto_stock_id FOREIGN KEY(stock_id) REFER
 ALTER TABLE company_info ADD CHECK (length(post_code)=7);
 
 ALTER TABLE market_info ADD CONSTRAINT fk_market_id FOREIGN KEY(stock_id) REFERENCES individual_stock_info(stock_id) ON DELETE CASCADE ON UPDATE CASCADE;
+

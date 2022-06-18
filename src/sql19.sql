@@ -19,3 +19,4 @@ select isi.stock_id,isi.market_id,isi.ticker_simbol,isi.current_value from indiv
 select isih.stock_history_id, isih.stock_id,ticker_simbol,isih.current_value from individual_stock_info_history as isih
 intersect
 select isi.stock_id,isi.market_id,isi.ticker_simbol,isi.current_value from individual_stock_info as isi;
+
