@@ -8,11 +8,10 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: pracadmin
-      POSTGRES_PASSWORD: pracadminpw
-      POSTGRES_DB: pracdb
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PW}
+      - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - ./blogpgdata:/var/lib/postgresql/data
 volumes:
   blogpgdata: {}
-    
